@@ -5,7 +5,7 @@ Assume 𝑆 = <𝑎<sub>1</sub>,𝑎<sub>2</sub>,...,𝑎<sub>𝑡</sub>> is a d
 
 A simple way to do this is to just keep the counts for each item 1 ≤ i ≤ n separately. However, this will require O(n) space, and in many applications (e.g., think online advertising and counts of user’s clicks on ads) this can be prohibitively large. We see in this problem that it is possible to approximate these counts using a much smaller amount of space. To do so, we consider the algorithm explained below.
 
-**Strategy**
+### Strategy
 
 The algorithm has two parameters 𝛿,𝜖>0. It picks 𝑙𝑜𝑔(1/𝛿) independent hash functions: ∀𝑗∈⟦1;⌈𝑙𝑜𝑔1/𝛿⌉⟧,ℎ𝑗:{1,2,⋯,𝑛}→{1,2,⋯,⌈𝑒/𝜖⌉}, where log denotes natural logarithm. Also, it associates a count c<sub>j,x</sub> to any 1≤𝑗≤𝑙𝑜𝑔(1/𝛿) and 1≤𝑥≤⌈𝑒/𝜖⌉ . In the beginning of the stream, all these counts are initialized to 0. Then, upon arrival of each 𝑎𝑘 (1≤𝑘≤𝑡), each of the counts 𝐶<sub>𝑗,ℎ𝑗</sub>(𝑎<sub>𝑘</sub>) (1≤𝑗≤⌈𝑙𝑜𝑔1/𝛿⌉) is incremented by 1.
 
