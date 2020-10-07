@@ -9,7 +9,7 @@ A simple way to do this is to just keep the counts for each item 1 ≤ i ≤ n s
 
 The algorithm has two parameters 𝛿,𝜖>0. It picks 𝑙𝑜𝑔(1/𝛿) independent hash functions: ∀𝑗∈⟦1;⌈𝑙𝑜𝑔1/𝛿⌉⟧,ℎ𝑗:{1,2,⋯,𝑛}→{1,2,⋯,⌈𝑒/𝜖⌉}, where log denotes natural logarithm. Also, it associates a count c<sub>j,x</sub> to any 1≤𝑗≤𝑙𝑜𝑔(1/𝛿) and 1≤𝑥≤⌈𝑒/𝜖⌉ . In the beginning of the stream, all these counts are initialized to 0. Then, upon arrival of each 𝑎𝑘 (1≤𝑘≤𝑡), each of the counts 𝐶<sub>𝑗,ℎ𝑗</sub>(𝑎<sub>𝑘</sub>) (1≤𝑗≤⌈𝑙𝑜𝑔1/𝛿⌉) is incremented by 1.
 
-For any 1≤𝑖≤𝑛, we define 𝐹̃'[𝑖]=min<sub>j</sub>{𝑐𝑗,ℎ𝑗(𝑖)}. We will show that 𝐹̃'[𝑖] provides a good approximation to F[i]. Note that this algorithm only uses 𝑂((1/𝜖) * log (1/𝛿)) space.
+For any 1≤𝑖≤𝑛, we define 𝐹̃'[𝑖]=min<sub>j</sub>{𝑐𝑗,ℎ𝑗(𝑖)}. We will show that 𝐹̃'[𝑖] provides a good approximation to F[i]. **Note that this algorithm only uses 𝑂((1/𝜖) * log (1/𝛿)) space.**
 
 # Datasets
 * [words_stream.txt](https://drive.google.com/file/d/1TA01NMOXDoqifBK_X7pnLXtEcO4sYGt4/view?usp=sharing): each line of this file is a number corresponding to the ID of a word in the stream.
